@@ -8,7 +8,7 @@ A beautiful desktop application to organize your files by format into folders. B
 
 ## Demo Video
 
-https://www.youtube.com/watch?v=J2oKwFd46ls
+https://youtu.be/spd8vRITWYI
 
 ## Features
 
