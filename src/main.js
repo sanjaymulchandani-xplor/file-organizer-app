@@ -138,6 +138,28 @@ async function createCategoryFolders(basePath, categories) {
     return createdFolders;
 }
 
+async function cleanupEmptyFolders(basePath, categories) {
+    const cleanedFolders = [];
+
+    for (const category of categories) {
+        const folderPath = path.join(basePath, category);
+        try {
+            // Check if folder exists and is empty
+            if (fsSync.existsSync(folderPath)) {
+                const files = await fs.readdir(folderPath);
+                if (files.length === 0) {
+                    await fs.rmdir(folderPath);
+                    cleanedFolders.push(folderPath);
+                }
+            }
+        } catch (error) {
+            console.error(`Error cleaning up folder ${folderPath}:`, error);
+        }
+    }
+
+    return cleanedFolders;
+}
+
 async function moveFiles(fileInfo, basePath, dryRun = false) {
     let movedCount = 0;
     let failedCount = 0;
@@ -219,17 +241,29 @@ ipcMain.handle('scan-directory', async (event, directoryPath) => {
 
 ipcMain.handle('organize-files', async (event, { fileInfo, directoryPath, dryRun }) => {
     try {
-        // Create category folders
+        // Get categories that have files
         const categories = Object.keys(fileInfo).filter(category =>
             fileInfo[category] && fileInfo[category].length > 0
         );
 
-        await createCategoryFolders(directoryPath, categories);
+        // Only create category folders when actually organizing (not preview)
+        if (!dryRun) {
+            await createCategoryFolders(directoryPath, categories);
+        }
 
-        // Move files
+        // Move files (or simulate for preview)
         const result = await moveFiles(fileInfo, directoryPath, dryRun);
 
         return { success: true, data: result };
+    } catch (error) {
+        return { success: false, error: error.message };
+    }
+});
+
+ipcMain.handle('cleanup-empty-folders', async (event, { directoryPath, categories }) => {
+    try {
+        const cleanedFolders = await cleanupEmptyFolders(directoryPath, categories);
+        return { success: true, data: cleanedFolders };
     } catch (error) {
         return { success: false, error: error.message };
     }

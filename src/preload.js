@@ -6,6 +6,7 @@ contextBridge.exposeInMainWorld('electronAPI', {
     selectDirectory: () => ipcRenderer.invoke('select-directory'),
     scanDirectory: (path) => ipcRenderer.invoke('scan-directory', path),
     organizeFiles: (data) => ipcRenderer.invoke('organize-files', data),
+    cleanupEmptyFolders: (data) => ipcRenderer.invoke('cleanup-empty-folders', data),
     getDefaultDirectories: () => ipcRenderer.invoke('get-default-directories'),
     openDirectory: (path) => ipcRenderer.invoke('open-directory', path)
 });
