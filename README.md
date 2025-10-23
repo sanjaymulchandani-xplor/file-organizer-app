@@ -39,7 +39,7 @@ The app organizes files into these comprehensive categories:
 
 ## Demo Video
 
-*Demo video will be uploaded here*
+https://www.youtube.com/watch?v=J2oKwFd46ls
 
 ## Quick Start
 
