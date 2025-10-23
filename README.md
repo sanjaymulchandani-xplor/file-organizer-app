@@ -6,6 +6,10 @@ A beautiful desktop application to organize your files by format into folders. B
 ![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
+## Demo Video
+
+https://www.youtube.com/watch?v=J2oKwFd46ls
+
 ## Features
 
 - **Modern Minimalistic UI**: Clean, shadcn-inspired interface
@@ -35,10 +39,6 @@ The app organizes files into these comprehensive categories:
 | **Fonts** | TTF, OTF, WOFF, WOFF2, EOT |
 | **Data** | JSON, XML, YAML, YML, SQL, DB, SQLite |
 | **Design** | PSD, AI, Sketch, FIG, XD, INDD |
-
-## Demo Video
-
-https://www.youtube.com/watch?v=J2oKwFd46ls
 
 ## Quick Start
 
