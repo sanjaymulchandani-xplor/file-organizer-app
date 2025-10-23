@@ -8,7 +8,7 @@ A beautiful desktop application to organize your files by format into folders. B
 
 ## Features
 
-- **Modern Minimalistic UI**: Clean, shadcn-inspired interface with no emojis
+- **Modern Minimalistic UI**: Clean, shadcn-inspired interface
 - **Smart Organization**: Automatically categorizes files by format into 12+ categories
 - **Preview Mode**: See exactly what changes will be made before organizing
 - **Fast Performance**: Quick scanning and organizing with real-time feedback
@@ -16,7 +16,6 @@ A beautiful desktop application to organize your files by format into folders. B
 - **Safe Operations**: Built-in duplicate handling and error recovery
 - **Detailed Info**: Comprehensive file type support information
 - **Custom Icon**: Professional filer icon design
-- **Easy Navigation**: Back button for seamless workflow
 
 ## Supported File Categories
 
