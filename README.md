@@ -6,19 +6,19 @@ A beautiful desktop application to organize your files by format into folders. B
 ![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-## ✨ Features
+## Features
 
-- 🎨 **Modern Minimalistic UI**: Clean, shadcn-inspired interface with no emojis
-- 📁 **Smart Organization**: Automatically categorizes files by format into 12+ categories
-- 👀 **Preview Mode**: See exactly what changes will be made before organizing
-- 🚀 **Fast Performance**: Quick scanning and organizing with real-time feedback
-- 💻 **Cross-Platform**: Works on Windows, macOS, and Linux
-- 🔒 **Safe Operations**: Built-in duplicate handling and error recovery
-- 📊 **Detailed Info**: Comprehensive file type support information
-- 🎯 **Custom Icon**: Professional filer icon design
-- ↩️ **Easy Navigation**: Back button for seamless workflow
+- **Modern Minimalistic UI**: Clean, shadcn-inspired interface with no emojis
+- **Smart Organization**: Automatically categorizes files by format into 12+ categories
+- **Preview Mode**: See exactly what changes will be made before organizing
+- **Fast Performance**: Quick scanning and organizing with real-time feedback
+- **Cross-Platform**: Works on Windows, macOS, and Linux
+- **Safe Operations**: Built-in duplicate handling and error recovery
+- **Detailed Info**: Comprehensive file type support information
+- **Custom Icon**: Professional filer icon design
+- **Easy Navigation**: Back button for seamless workflow
 
-## 📂 Supported File Categories
+## Supported File Categories
 
 The app organizes files into these comprehensive categories:
 
@@ -37,7 +37,11 @@ The app organizes files into these comprehensive categories:
 | **Data** | JSON, XML, YAML, YML, SQL, DB, SQLite |
 | **Design** | PSD, AI, Sketch, FIG, XD, INDD |
 
-## 🚀 Quick Start
+## Demo Video
+
+*Demo video will be uploaded here*
+
+## Quick Start
 
 ### For Users (Ready-to-Use App)
 1. Download the latest release for your platform from the [Releases](../../releases) page
@@ -83,7 +87,7 @@ npm run build-win    # Windows (.exe)
 npm run build-linux  # Linux (.AppImage)
 ```
 
-## 📦 Distribution
+## Distribution
 
 After building, platform-specific files are created in the `dist` folder:
 - **macOS**: `File Organizer.app` and `.dmg` installer
@@ -92,7 +96,7 @@ After building, platform-specific files are created in the `dist` folder:
 
 These can be shared with users who can run them without installing Node.js or dependencies.
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 file-organizer-app/
@@ -110,7 +114,7 @@ file-organizer-app/
 └── README.md          # This file
 ```
 
-## 🎨 Design System
+## Design System
 
 The app uses a minimalistic design inspired by shadcn/ui:
 - **CSS Custom Properties**: Consistent theming system
@@ -119,7 +123,7 @@ The app uses a minimalistic design inspired by shadcn/ui:
 - **Typography**: Clear hierarchy with system fonts
 - **Responsive Grid**: Adaptive layouts for different screen sizes
 
-## 🔧 Technology Stack
+## Technology Stack
 
 - **Framework**: Electron.js v27.0.0
 - **Frontend**: HTML5, CSS3, Vanilla JavaScript
@@ -128,11 +132,11 @@ The app uses a minimalistic design inspired by shadcn/ui:
 - **Icons**: Custom filer icon with multiple resolutions
 - **Design**: shadcn/ui inspired component system
 
-## 📝 License
+## License
 
 MIT License - feel free to use this project for personal or commercial purposes.
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
@@ -142,40 +146,15 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📞 Support
+## Support
 
 If you encounter any issues or have questions:
 1. Check the existing [Issues](../../issues)
 2. Create a new issue with detailed information
 3. Include your platform (Windows/macOS/Linux) and version
 
-## 🌟 Acknowledgments
+## Acknowledgments
 
 - Built with [Electron.js](https://electronjs.org/)
 - Design inspired by [shadcn/ui](https://ui.shadcn.com/)
 - Icon design using custom filer.icon assets
-- **Typography**: Clear hierarchy with system fonts
-- **Responsive Grid**: Adaptive layouts for different screen sizes
-
-## 🔧 Technology Stack
-
-- **Framework**: Electron.js v27.0.0
-- **Frontend**: HTML5, CSS3, Vanilla JavaScript
-- **Backend**: Node.js with file system APIs
-- **Build Tool**: electron-builder
-- **Icons**: Custom filer icon with multiple resolutions
-- **Design**: shadcn/ui inspired component system
-│   └── renderer.js     # UI logic
-├── assets/
-│   └── icon.png        # App icon
-├── package.json        # Dependencies and build config
-└── README.md
-```
-
-## License
-
-MIT License - feel free to use and modify as needed.
-
-## Contributing
-
-Feel free to submit issues and pull requests to improve the application!
