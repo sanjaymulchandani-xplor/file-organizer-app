@@ -3,7 +3,7 @@
 ## Step 1: Create Repository on GitHub
 1. Go to https://github.com/new
 2. Repository name: `file-organizer-app`
-3. Description: `A beautiful desktop application to organize files by format with minimalistic design`
+3. Description: `Clean, minimalistic open-source desktop app that automatically organizes files by format. Built with Electron.js, supports 12+ file categories with instant preview and one-click organization.`
 4. Make it **Public** (recommended for showcasing)
 5. **DO NOT** initialize with README, .gitignore, or license (we already have these)
 6. Click "Create repository"
@@ -13,7 +13,7 @@ After creating the repository, run these commands in your terminal:
 
 ```bash
 # Navigate to the project directory
-cd /Users/sanjaymulchandani/Documents/on-call-claim/file-organizer-app
+cd /file-organizer-app
 
 # Add the GitHub repository as remote origin
 git remote add origin https://github.com/YOUR_USERNAME/file-organizer-app.git
