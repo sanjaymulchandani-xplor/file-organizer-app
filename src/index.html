@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Organizer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <div>
+                    <h1>File Organizer</h1>
+                    <p>Organize your files by format into folders</p>
+                </div>
+                <button class="back-button" id="back-button">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m15 18-6-6 6-6"/>
+                    </svg>
+                    Back to Start
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Step 1: Select Directory -->
+            <section class="step-section" id="step-select">
+                <div class="step-header">
+                    <span class="step-number">1</span>
+                    <h2>Select Directory</h2>
+                </div>
+
+                <div class="card">
+                    <div class="directory-selection">
+                        <div class="quick-select">
+                            <h3>Quick Select</h3>
+                            <div class="quick-buttons">
+                                <button class="quick-btn" data-dir="downloads">Downloads</button>
+                                <button class="quick-btn" data-dir="desktop">Desktop</button>
+                                <button class="quick-btn" data-dir="documents">Documents</button>
+                            </div>
+                        </div>
+
+                        <div class="custom-select">
+                            <h3>Or choose custom folder</h3>
+                            <button id="select-folder-btn" class="primary-btn">
+                                Browse for Folder
+                            </button>
+                        </div>
+
+                        <div class="selected-path" id="selected-path" style="display: none;">
+                            <strong>Selected:</strong>
+                            <span id="current-path"></span>
+                            <button id="change-folder-btn" class="secondary-btn">Change</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Supported File Types Info -->
+                <div class="card info-card">
+                    <div class="info-header">
+                        <h3>Supported File Types</h3>
+                        <p>Files will be organized into the following categories:</p>
+                    </div>
+
+                    <div class="file-types-grid">
+                        <div class="file-type-category">
+                            <strong>Images</strong>
+                            <span>JPG, PNG, GIF, BMP, TIFF, SVG, WebP, ICO, HEIC</span>
+                        </div>
+                        <div class="file-type-category">
+                            <strong>Documents</strong>
+                            <span>PDF, DOC, DOCX, TXT, RTF, ODT, Pages, MD, TEX</span>
+                        </div>
+                        <div class="file-type-category">
+                            <strong>Spreadsheets</strong>
+                            <span>XLS, XLSX, CSV, ODS, Numbers</span>
+                        </div>
+                        <div class="file-type-category">
+                            <strong>Presentations</strong>
+                            <span>PPT, PPTX, ODP, Key</span>
+                        </div>
+                        <div class="file-type-category">
+                            <strong>Videos</strong>
+                            <span>MP4, AVI, MKV, MOV, WMV, FLV, WebM, M4V, 3GP</span>
+                        </div>
+                        <div class="file-type-category">
+                            <strong>Audio</strong>
+                            <span>MP3, WAV, FLAC, AAC, OGG, WMA, M4A, Opus</span>
+                        </div>
+                        <div class="file-type-category">
+                            <strong>Archives</strong>
+                            <span>ZIP, RAR, 7Z, TAR, GZ, BZ2, XZ, DMG, PKG, DEB, RPM</span>
+                        </div>
+                        <div class="file-type-category">
+                            <strong>Code</strong>
+                            <span>PY, JS, HTML, CSS, Java, CPP, C, H, PHP, RB, GO, RS, Swift</span>
+                        </div>
+                        <div class="file-type-category">
+                            <strong>Executables</strong>
+                            <span>EXE, MSI, APP, DEB, RPM, RUN, BIN</span>
+                        </div>
+                        <div class="file-type-category">
+                            <strong>Fonts</strong>
+                            <span>TTF, OTF, WOFF, WOFF2, EOT</span>
+                        </div>
+                        <div class="file-type-category">
+                            <strong>Data</strong>
+                            <span>JSON, XML, YAML, YML, SQL, DB, SQLite</span>
+                        </div>
+                        <div class="file-type-category">
+                            <strong>Design</strong>
+                            <span>PSD, AI, Sketch, FIG, XD, INDD</span>
+                        </div>
+                    </div>
+                </div>
+            </section>            <!-- Step 2: Scan Results -->
+            <!-- Step 2: Scan Results -->
+            <section class="step-section" id="step-scan" style="display: none;">
+                <div class="step-header">
+                    <span class="step-number">2</span>
+                    <h2>Scan Results</h2>
+                </div>
+
+                <div class="card">
+                    <div class="scan-results">
+                        <div class="results-summary">
+                            <div class="summary-card">
+                                <span class="summary-number" id="total-files">0</span>
+                                <span class="summary-label">Total Files</span>
+                            </div>
+                            <div class="summary-card">
+                                <span class="summary-number" id="total-categories">0</span>
+                                <span class="summary-label">Categories</span>
+                            </div>
+                            <div class="summary-card">
+                                <span class="summary-number" id="total-size">0</span>
+                                <span class="summary-label">Total Size</span>
+                            </div>
+                        </div>
+
+                        <div class="categories-list" id="categories-list">
+                            <!-- Categories will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step 3: Organize -->
+            <section class="step-section" id="step-organize" style="display: none;">
+                <div class="step-header">
+                    <span class="step-number">3</span>
+                    <h2>Organize Files</h2>
+                </div>
+
+                <div class="card">
+                    <div class="organize-options">
+                        <div class="action-buttons">
+                            <button id="preview-btn" class="secondary-btn">
+                                Preview Changes
+                            </button>
+                            <button id="organize-btn" class="primary-btn">
+                                Organize Files
+                            </button>
+                        </div>
+
+                        <div class="warning-message">
+                            <p>This will move files into subfolders. Make sure you have a backup if needed.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step 4: Results -->
+            <section class="step-section" id="step-results" style="display: none;">
+                <div class="step-header">
+                    <span class="step-number">4</span>
+                    <h2>Operation Complete</h2>
+                </div>
+
+                <div class="card">
+                    <div class="operation-results">
+                        <div class="results-summary">
+                            <div class="summary-card success">
+                                <span class="summary-number" id="moved-count">0</span>
+                                <span class="summary-label">Files Moved</span>
+                            </div>
+                            <div class="summary-card error">
+                                <span class="summary-number" id="failed-count">0</span>
+                                <span class="summary-label">Failed</span>
+                            </div>
+                        </div>
+
+                        <div class="results-actions">
+                            <button id="open-folder-btn" class="primary-btn">
+                                Open Organized Folder
+                            </button>
+                            <button id="start-over-btn" class="secondary-btn">
+                                Start Over
+                            </button>
+                        </div>
+
+                        <div class="detailed-results" id="detailed-results">
+                            <!-- Detailed results will be shown here -->
+                        </div>
+                    </div>
+                </div>
+            </section>            <!-- Step 3: Organize -->
+            <section class="step-section" id="step-organize" style="display: none;">
+                <div class="step-header">
+                    <span class="step-number">3</span>
+                    <h2>Organize Files</h2>
+                </div>
+
+                <div class="organize-options">
+                    <div class="action-buttons">
+                        <button id="preview-btn" class="secondary-btn">
+                            👁️ Preview Changes
+                        </button>
+                        <button id="organize-btn" class="primary-btn">
+                            ✨ Organize Files
+                        </button>
+                    </div>
+
+                    <div class="warning-message">
+                        <p>⚠️ This will move files into subfolders. Make sure you have a backup if needed.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step 4: Results -->
+            <section class="step-section" id="step-results" style="display: none;">
+                <div class="step-header">
+                    <span class="step-number">4</span>
+                    <h2>Operation Complete</h2>
+                </div>
+
+                <div class="operation-results">
+                    <div class="results-summary">
+                        <div class="summary-card success">
+                            <span class="summary-number" id="moved-count">0</span>
+                            <span class="summary-label">Files Moved</span>
+                        </div>
+                        <div class="summary-card error">
+                            <span class="summary-number" id="failed-count">0</span>
+                            <span class="summary-label">Failed</span>
+                        </div>
+                    </div>
+
+                    <div class="results-actions">
+                        <button id="open-folder-btn" class="primary-btn">
+                            📂 Open Organized Folder
+                        </button>
+                        <button id="start-over-btn" class="secondary-btn">
+                            🔄 Start Over
+                        </button>
+                    </div>
+
+                    <div class="detailed-results" id="detailed-results">
+                        <!-- Detailed results will be shown here -->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Loading Overlay -->
+        <div class="loading-overlay" id="loading-overlay" style="display: none;">
+            <div class="spinner"></div>
+            <p id="loading-text">Processing...</p>
+        </div>
+
+        <!-- Error Toast -->
+        <div class="toast error-toast" id="error-toast" style="display: none;">
+            <span id="error-message"></span>
+            <button class="toast-close">&times;</button>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>

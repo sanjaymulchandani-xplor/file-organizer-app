@@ -1,0 +1,20 @@
+# App Icon
+
+Place a 512x512 PNG icon file named "icon.png" in this folder.
+
+For a file organizer app, consider an icon with:
+- Folder symbol
+- Sorting/organizing arrows
+- Clean, modern design
+- Good contrast for both light and dark backgrounds
+
+You can create an icon using:
+- Icon design tools like Sketch, Figma, or Canva
+- AI-generated icons
+- Free icon resources like Icons8, Flaticon
+
+The icon will be used for:
+- App window icon
+- Taskbar/dock icon
+- Desktop shortcut
+- Installer icon
