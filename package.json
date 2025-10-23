@@ -1,8 +1,16 @@
 {
   "name": "file-organizer-app",
   "version": "1.0.0",
-  "description": "A desktop application to organize files by format into folders",
+  "description": "A beautiful desktop application to organize files by format with minimalistic design - Built with Electron.js",
   "main": "src/main.js",
+  "homepage": "https://github.com/sanjaymulchandani-xplor/file-organizer-app#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sanjaymulchandani-xplor/file-organizer-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sanjaymulchandani-xplor/file-organizer-app/issues"
+  },
   "scripts": {
     "start": "electron .",
     "dev": "electron . --dev",
@@ -18,9 +26,15 @@
     "file-organizer",
     "desktop-app",
     "electron",
-    "file-management"
+    "file-management",
+    "cross-platform",
+    "minimalistic",
+    "shadcn",
+    "file-sorting",
+    "productivity",
+    "javascript"
   ],
-  "author": "Your Name",
+  "author": "Sanjay Mulchandani",
   "license": "MIT",
   "devDependencies": {
     "electron": "^27.0.0",
