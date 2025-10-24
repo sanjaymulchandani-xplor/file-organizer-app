@@ -31,32 +31,32 @@ git push -u origin main
 
 ## What's Included in the Repository
 
-✅ **Complete Application Code**
+**Complete Application Code**
 - Source code with minimalistic design
 - Custom filer icon (392x392px) 
 - All assets and configurations
 
-✅ **Documentation**
+**Documentation**
 - Comprehensive README.md
 - Installation and development instructions
 - Technology stack overview
 
-✅ **Build Configuration**
+**Build Configuration**
 - package.json with all dependencies
 - electron-builder configuration
 - Cross-platform build scripts
 
-✅ **Version Control**
+**Version Control**
 - .gitignore file (excludes node_modules, dist, etc.)
 - Initial commit with 30 files
 - Ready for collaboration
 
 ## Repository Features
-- 📱 **12+ File Categories** supported
-- 🎨 **Minimalistic Design** (shadcn-inspired)
-- 🔄 **Cross-Platform** (Windows, macOS, Linux)
-- 👥 **Open Source** (MIT License)
-- 📖 **Well Documented**
+- **12+ File Categories** supported
+- **Minimalistic Design** (shadcn-inspired)
+- **Cross-Platform** (Windows, macOS, Linux)
+- **Open Source** (MIT License)
+- **Well Documented**
 
 ## Next Steps
 1. Create the GitHub repository
