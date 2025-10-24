@@ -86,4 +86,4 @@ The app organizes files into:
 
 ---
 
-**🎯 Ready to share!** Your app is now a standalone executable that anyone can run without installing Node.js or any dependencies.
+**🎯 Ready to share!** This app is now a standalone executable that anyone can run without installing Node.js or any dependencies.
